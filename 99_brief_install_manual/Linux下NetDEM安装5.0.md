@@ -44,6 +44,7 @@ Update date：2024 July 19
 8. 纯净的Ubuntu系统不带有gmp的库，需要安装gmp，gmp的下载网址为：[https://gmplib.org/]。需要使用命令进行解压：
 ```
     tar -xf gmp-6.3.0.tar.xz
+    cd gmp-6.3.0
     ./configure --enable-cxx
     make
     make check
