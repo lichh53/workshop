@@ -67,5 +67,16 @@ Update date：2024 July 19
 ```
     sudo apt install paraview
 ```
+12. 若需要安装最新的paraview，需要在官网下载最新的包。下载后将解压缩后，将安装包复制到/usr/local/ 路径下，在~/.bashrc中修改默认的paraview路径，而后在终端中启用paraview即为最新版本的paraview。
+```
+    sudo tar -xvzf ParaView-5.13.0-MPI-Linux-Python3.10-x86_64.tar.gz 
+    mv -rf ParaView-5.13.0-MPI-Linux-Python3.10-x86_64 /usr/local/paraview
+    vim ~/.bashrc
+    alias paraview=/usr/local/paraview/bin/paraview
+    source ~/.bashrc
+```
+
+13. 单纯使用release版本进行安装还需测试ubuntu环境依赖与
+
 
 ##### 编辑：李诚豪

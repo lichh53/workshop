@@ -44,3 +44,6 @@ git checkout develop
 git pull
 git checkout -b lichh53-test2(分支名称)
 ```
+更新
+建议将库fork到自己的仓库，在自己仓库里操作不影响原库的内容。（其实基本概念同创建新的分支。）
+（在网页端和GitHub Desktop即可操作。）
