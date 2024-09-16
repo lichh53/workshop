@@ -40,6 +40,8 @@ header-includes:
 - 常用的文本编辑器 Vim 的使用方法
 - Shell 编程基础
 
+[Link: 92_linux/linux_main.md](92_linux/linux_main.md)
+
 # 第三章：C++ 基础
 
 - C++ 的核心概念，如变量、数据类型、运算符等
