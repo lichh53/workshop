@@ -1,0 +1,41 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      p_rgh;
+}
+
+dimensions      [1 -1 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    atmosphere
+    {
+        type            prghPressure;
+        p               uniform 0;
+        rho             rho;
+        value           uniform 0;
+    }
+
+    left_right
+    {
+        type            prghTotalHydrostaticPressure;
+        value           uniform 0;
+        ph_rgh          p_rgh;
+    }
+
+    front_back
+    {
+        type            fixedFluxPressure;
+        value           uniform 0;
+    }
+
+    bottom
+    {
+        type            fixedFluxPressure;
+        value           uniform 0;
+    }
+}

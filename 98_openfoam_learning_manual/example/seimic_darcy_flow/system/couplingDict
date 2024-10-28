@@ -1,0 +1,17 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      coulingDict;
+}
+
+dragForceModel     WenYu1966;
+
+WenYu1966Coeffs
+{
+    alpha           170;
+    beta            1.75;
+    dragCoefModel   BrownLawler2003;
+}
