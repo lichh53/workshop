@@ -54,7 +54,7 @@ Update date：2024 July 19
 
 
 9.需要调用netdem的python模块时，需安装pip3的支持。然后安装netdem的库。ubuntu系统中若已安装过编译过netdem，在netdem的路径下运行
-```
+``` 
     sudo apt install python3-pip
     make pip_install (已编译netdem)
     pip3 install netdem（未编译netdem）
