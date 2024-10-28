@@ -51,6 +51,8 @@ Update date：2024 July 19
     sudo make install
 ```
 
+
+
 9.需要调用netdem的python模块时，需安装pip3的支持。然后安装netdem的库。ubuntu系统中若已安装过编译过netdem，在netdem的路径下运行
 ```
     sudo apt install python3-pip
@@ -76,7 +78,24 @@ Update date：2024 July 19
     source ~/.bashrc
 ```
 
-13. 单纯使用release版本进行安装还需测试ubuntu环境依赖与
+13. 无源代码安装python-netdem的库：
 
+获取whl文件后的安装方式：
+```
+pip3 install [netdem-xxx.whl]
+```
+
+如何获取whl文件
+
+检查确认制作whl的环境。
+```
+pip install setuptools wheel
+```
+在netdem的路径下运行：
+```
+python setup.py sdist bdist_wheel
+```
+即可在dist文件夹中获取生成的文件：以下为1.3版本的netdem在linux系统中，芯片架构为64位的X86处理器，python的版本为3.10。（ubuntu22.04的默认版本。）
+netdem-1.3-cp310-cp310-linux_x86_64.whl
 
 ##### 编辑：李诚豪
