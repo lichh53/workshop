@@ -1,14 +1,16 @@
+### netdem/cfddem 安装教程（whl版本）
+
 #### 安装ubuntu 22.04，以Docker为例。（用虚拟机或直接安装ubuntu系统也可）
 
 ##### 提前下载准备 （https://www.jianguoyun.com/p/DfPZbg8Qo6K6CBiqn90FIAA 有效期：10.31 23:59）
 
 1. docker（Docker Desktop Installer.exe）
 
-2. VSCode（VSCodeSetup-x64-1.94.2.exe)
+2. VSCode（VSCodeSetup-x64-1.94.2.exe）
 
 3. Ubuntu22.04 （ubuntu_image.tar）
 
-4. paraview（ParaView-5.13.1-Windows-Python3.10-msvc2017-AMD64.msi)
+4. paraview（ParaView-5.13.1-Windows-Python3.10-msvc2017-AMD64.msi）
 
 5. netdem（netdem-1.3-cp310-cp310-linux_x86_64.whl）、openfoam（openfoam_customized.zip）、cfddem（98-cfddem_solver.zip）
 
@@ -22,14 +24,16 @@
 
 设置->resource中更改文件夹路径至剩余空间较大的硬盘（默认为C盘）
 
-##### 方式1：导入本地ubuntu的镜像,运行这个镜像
+##### 获得ubuntu22.04镜像
+
+###### 方式1：导入本地ubuntu的镜像,运行这个镜像
 
 ``` bash
     docker load -i ubuntu_image.tar 
     docker run -it sha256:97271d29cb7956f0908cfb1449610a2cd9cb46b004ac8af25f0255663eb364ba
 ```
 
-#### 方式2：云端拉取ubuntu22.04镜像
+###### 方式2：云端拉取ubuntu22.04镜像
 
 win+r 输入cmd，命令行输入
 
@@ -90,18 +94,19 @@ win+r 输入cmd，命令行输入
 安装所需依赖：
 
 ```bash
-	sudo apt install -y build-essential libssl-dev zlib1g-dev libffi-dev libsqlite3-dev
+    sudo apt install -y build-essential libssl-dev zlib1g-dev libffi-dev libsqlite3-dev
 ```
 
 安装python3.10：
 
 ```bash
-	sudo apt install python3.10
+    sudo apt install python3.10
 ```
 
 验证是否安装成功：(终端会显示正确版本)
+
 ``` bash
-	python3.10 --version
+    python3.10 --version
 ```
 
 安装pip：
@@ -114,7 +119,7 @@ win+r 输入cmd，命令行输入
 
 ###### 从本地把安装包拷贝到容器中（以本地系统为win10为例）
 
-在win+R中输入cmd 新建另一个终端。
+在win+R中输入 `cmd` 新建另一个终端。
 
 ``` bash
     docker cp 目录\文件名 容器id：目录
@@ -142,7 +147,7 @@ win+r 输入cmd，命令行输入
 
 ###### 测试
 
-终端输入python3进入python环境（ctrl+D退出），输入`import netdem`,没报错则安装成功
+终端输入 `python3` 进入python环境（ctrl+D退出），输入`import netdem`,没报错则安装成功
 
 #### 安装openfoam：
 
@@ -238,6 +243,8 @@ win+r 输入cmd，命令行输入
 
 拷贝到ubuntu的算例文件夹需要赋予全部的读写权限才能正常运行：
 
-```
+```bash
     sudo chmod -R 777 文件夹名
 ```
+
+© NetDEM Team.
