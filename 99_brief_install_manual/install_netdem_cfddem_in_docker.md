@@ -24,9 +24,21 @@
 
 设置->resource中更改文件夹路径至剩余空间较大的硬盘（默认为C盘）
 
+Windows下安装docker若重启后在命令行中使用docker仍没有命令，可能是没有添加路径，请参考一下步骤解决
+
+1.	打开 控制面板，进入 系统和安全 > 系统。
+2.	点击左侧的 高级系统设置。
+3.	在“系统属性”窗口中，点击 环境变量。
+4.	在“系统变量”中找到并选择 Path，然后点击 编辑。
+5.	点击 新建，添加 Docker 安装目录路径（通常为 C:\Program Files\Docker\Docker\resources\bin）。
+6.	点击 确定，然后关闭所有设置窗口。
+7.  重启终端环境。
+
 ##### 获得ubuntu22.04镜像
 
-###### 方式1：导入本地ubuntu的镜像,运行这个镜像
+###### 方式1：导入本地ubuntu的镜像,运行这个镜像：
+
+win+r 输入cmd，命令行输入
 
 ``` bash
     docker load -i ubuntu_image.tar 
@@ -171,6 +183,12 @@ win+r 输入cmd，命令行输入
     docker cp C:\Users\Administrator\Desktop\openfoam_customized.zip ed45a5e9f2087e2b9f8212ed9367096334e6db894ff53aba3726569632b9f9cd:/home/student/openfoam_customized.zip
 ```
 
+回到docker中
+
+```bash
+	unzip openfoam_customized.zip
+```
+
 ##### 进行安装（耗时可能1小时左右）
 
 ```bash
@@ -182,7 +200,7 @@ win+r 输入cmd，命令行输入
 ##### 按i进入编辑模式，在末尾加上以下几行（路径自行调整）：
 
 ```bash
-    export path_openfoam=/home/student/openfoam_customized/OpenFOAM-build
+    export path_openfoam=/home/student/openfoam_customized-main/OpenFOAM-build
     alias openfoam_init='source $path_openfoam/etc/bashrc' 
     openfoam_init
     echo "using openfoam=$path_openfoam"
@@ -246,5 +264,9 @@ win+r 输入cmd，命令行输入
 ```bash
     sudo chmod -R 777 文件夹名
 ```
+
+docker commit apaam apaam:test_v1.0
+
+
 
 © NetDEM Team.
